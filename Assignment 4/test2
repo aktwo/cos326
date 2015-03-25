@@ -1,0 +1,378 @@
+========
+0
+Evaluates to:
+0
+========
+========
+(rec fact n = if n < 1 then 1 else n * fact (n - 1)) 4
+Evaluates to:
+Evaluating (rec fact n = if n < 1 then 1 else n * fact (n - 1)) 4
+Evaluating rec fact n = if n < 1 then 1 else n * fact (n - 1)
+rec fact n = if n < 1 then 1 else n * fact (n - 1) evaluated to closure [] fact n = if n < 1 then 1 else n * fact (n - 1)
+Evaluating if n < 1 then 1 else n * fact (n - 1)
+Evaluating n < 1
+Evaluating n
+n evaluated to 4
+n < 1 evaluated to false
+Evaluating n * fact (n - 1)
+Evaluating n
+n evaluated to 4
+Evaluating fact (n - 1)
+Evaluating fact
+fact evaluated to closure [] fact n = if n < 1 then 1 else n * fact (n - 1)
+Evaluating n - 1
+Evaluating n
+n evaluated to 4
+n - 1 evaluated to 3
+Evaluating if n < 1 then 1 else n * fact (n - 1)
+Evaluating n < 1
+Evaluating n
+n evaluated to 3
+n < 1 evaluated to false
+Evaluating n * fact (n - 1)
+Evaluating n
+n evaluated to 3
+Evaluating fact (n - 1)
+Evaluating fact
+fact evaluated to closure [] fact n = if n < 1 then 1 else n * fact (n - 1)
+Evaluating n - 1
+Evaluating n
+n evaluated to 3
+n - 1 evaluated to 2
+Evaluating if n < 1 then 1 else n * fact (n - 1)
+Evaluating n < 1
+Evaluating n
+n evaluated to 2
+n < 1 evaluated to false
+Evaluating n * fact (n - 1)
+Evaluating n
+n evaluated to 2
+Evaluating fact (n - 1)
+Evaluating fact
+fact evaluated to closure [] fact n = if n < 1 then 1 else n * fact (n - 1)
+Evaluating n - 1
+Evaluating n
+n evaluated to 2
+n - 1 evaluated to 1
+Evaluating if n < 1 then 1 else n * fact (n - 1)
+Evaluating n < 1
+Evaluating n
+n evaluated to 1
+n < 1 evaluated to false
+Evaluating n * fact (n - 1)
+Evaluating n
+n evaluated to 1
+Evaluating fact (n - 1)
+Evaluating fact
+fact evaluated to closure [] fact n = if n < 1 then 1 else n * fact (n - 1)
+Evaluating n - 1
+Evaluating n
+n evaluated to 1
+n - 1 evaluated to 0
+Evaluating if n < 1 then 1 else n * fact (n - 1)
+Evaluating n < 1
+Evaluating n
+n evaluated to 0
+n < 1 evaluated to true
+if n < 1 then 1 else n * fact (n - 1) evaluated to 1
+fact (n - 1) evaluated to 1
+n * fact (n - 1) evaluated to 1
+if n < 1 then 1 else n * fact (n - 1) evaluated to 1
+fact (n - 1) evaluated to 1
+n * fact (n - 1) evaluated to 2
+if n < 1 then 1 else n * fact (n - 1) evaluated to 2
+fact (n - 1) evaluated to 2
+n * fact (n - 1) evaluated to 6
+if n < 1 then 1 else n * fact (n - 1) evaluated to 6
+fact (n - 1) evaluated to 6
+n * fact (n - 1) evaluated to 24
+if n < 1 then 1 else n * fact (n - 1) evaluated to 24
+(rec fact n = if n < 1 then 1 else n * fact (n - 1)) 4 evaluated to 24
+24
+========
+========
+1::2::3::4::[]
+Evaluates to:
+Evaluating 1::2::3::4::[]
+Evaluating 2::3::4::[]
+Evaluating 3::4::[]
+Evaluating 4::[]
+4::[] evaluated to 4::[]
+3::4::[] evaluated to 3::4::[]
+2::3::4::[] evaluated to 2::3::4::[]
+1::2::3::4::[] evaluated to 1::2::3::4::[]
+1::2::3::4::[]
+========
+========
+(rec sumlist l = match l with [] -> 0 | hd::tl -> hd + sumlist tl) (1::(2::(3::(4::[]))))
+Evaluates to:
+Evaluating (rec sumlist l = match l with [] -> 0 | hd::tl -> hd + sumlist tl) (1::(2::(3::(4::[]))))
+Evaluating rec sumlist l = match l with [] -> 0 | hd::tl -> hd + sumlist tl
+rec sumlist l = match l with [] -> 0 | hd::tl -> hd + sumlist tl evaluated to closure [] sumlist l = match l with [] -> 0 | hd::tl -> hd + sumlist tl
+Evaluating 1::2::3::4::[]
+Evaluating 2::3::4::[]
+Evaluating 3::4::[]
+Evaluating 4::[]
+4::[] evaluated to 4::[]
+3::4::[] evaluated to 3::4::[]
+2::3::4::[] evaluated to 2::3::4::[]
+1::2::3::4::[] evaluated to 1::2::3::4::[]
+Evaluating match l with [] -> 0 | hd::tl -> hd + sumlist tl
+Evaluating l
+l evaluated to 1::2::3::4::[]
+Evaluating hd + sumlist tl
+Evaluating hd
+hd evaluated to 1
+Evaluating sumlist tl
+Evaluating sumlist
+sumlist evaluated to closure [] sumlist l = match l with [] -> 0 | hd::tl -> hd + sumlist tl
+Evaluating tl
+tl evaluated to 2::3::4::[]
+Evaluating match l with [] -> 0 | hd::tl -> hd + sumlist tl
+Evaluating l
+l evaluated to 2::3::4::[]
+Evaluating hd + sumlist tl
+Evaluating hd
+hd evaluated to 2
+Evaluating sumlist tl
+Evaluating sumlist
+sumlist evaluated to closure [] sumlist l = match l with [] -> 0 | hd::tl -> hd + sumlist tl
+Evaluating tl
+tl evaluated to 3::4::[]
+Evaluating match l with [] -> 0 | hd::tl -> hd + sumlist tl
+Evaluating l
+l evaluated to 3::4::[]
+Evaluating hd + sumlist tl
+Evaluating hd
+hd evaluated to 3
+Evaluating sumlist tl
+Evaluating sumlist
+sumlist evaluated to closure [] sumlist l = match l with [] -> 0 | hd::tl -> hd + sumlist tl
+Evaluating tl
+tl evaluated to 4::[]
+Evaluating match l with [] -> 0 | hd::tl -> hd + sumlist tl
+Evaluating l
+l evaluated to 4::[]
+Evaluating hd + sumlist tl
+Evaluating hd
+hd evaluated to 4
+Evaluating sumlist tl
+Evaluating sumlist
+sumlist evaluated to closure [] sumlist l = match l with [] -> 0 | hd::tl -> hd + sumlist tl
+Evaluating tl
+tl evaluated to []
+Evaluating match l with [] -> 0 | hd::tl -> hd + sumlist tl
+Evaluating l
+l evaluated to []
+match l with [] -> 0 | hd::tl -> hd + sumlist tl evaluated to 0
+sumlist tl evaluated to 0
+hd + sumlist tl evaluated to 4
+match l with [] -> 0 | hd::tl -> hd + sumlist tl evaluated to 4
+sumlist tl evaluated to 4
+hd + sumlist tl evaluated to 7
+match l with [] -> 0 | hd::tl -> hd + sumlist tl evaluated to 7
+sumlist tl evaluated to 7
+hd + sumlist tl evaluated to 9
+match l with [] -> 0 | hd::tl -> hd + sumlist tl evaluated to 9
+sumlist tl evaluated to 9
+hd + sumlist tl evaluated to 10
+match l with [] -> 0 | hd::tl -> hd + sumlist tl evaluated to 10
+(rec sumlist l = match l with [] -> 0 | hd::tl -> hd + sumlist tl) (1::(2::(3::(4::[])))) evaluated to 10
+10
+========
+========
+let z = 2 in (let x = 3 in (rec f y = x + y + z)) (let x = 4 in (x + z))
+Evaluates to:
+Evaluating let z = 2 in (let x = 3 in (rec f y = x + y + z)) (let x = 4 in (x + z))
+Evaluating (let x = 3 in (rec f y = x + y + z)) (let x = 4 in (x + z))
+Evaluating let x = 3 in rec f y = x + y + z
+Evaluating rec f y = x + y + z
+rec f y = x + y + z evaluated to closure [x=3;z=2] f y = x + y + z
+let x = 3 in rec f y = x + y + z evaluated to closure [x=3;z=2] f y = x + y + z
+Evaluating let x = 4 in x + z
+Evaluating x + z
+Evaluating x
+x evaluated to 4
+Evaluating z
+z evaluated to 2
+x + z evaluated to 6
+let x = 4 in x + z evaluated to 6
+Evaluating x + y + z
+Evaluating x
+x evaluated to 3
+Evaluating y + z
+Evaluating y
+y evaluated to 6
+Evaluating z
+z evaluated to 2
+y + z evaluated to 8
+x + y + z evaluated to 11
+(let x = 3 in (rec f y = x + y + z)) (let x = 4 in (x + z)) evaluated to 11
+let z = 2 in (let x = 3 in (rec f y = x + y + z)) (let x = 4 in (x + z)) evaluated to 11
+11
+========
+========
+rec incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list
+Evaluates to:
+Evaluating rec incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list
+rec incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list evaluated to closure [] incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list
+closure [] incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list
+========
+========
+(rec incr arg = arg + 1) 1
+Evaluates to:
+Evaluating (rec incr arg = arg + 1) 1
+Evaluating rec incr arg = arg + 1
+rec incr arg = arg + 1 evaluated to closure [] incr arg = arg + 1
+Evaluating arg + 1
+Evaluating arg
+arg evaluated to 1
+arg + 1 evaluated to 2
+(rec incr arg = arg + 1) 1 evaluated to 2
+2
+========
+========
+(rec incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list) (1::(2::(3::(4::[]))))
+Evaluates to:
+Evaluating (rec incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list) (1::(2::(3::(4::[]))))
+Evaluating rec incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list
+rec incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list evaluated to closure [] incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list
+Evaluating 1::2::3::4::[]
+Evaluating 2::3::4::[]
+Evaluating 3::4::[]
+Evaluating 4::[]
+4::[] evaluated to 4::[]
+3::4::[] evaluated to 3::4::[]
+2::3::4::[] evaluated to 2::3::4::[]
+1::2::3::4::[] evaluated to 1::2::3::4::[]
+Evaluating (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list
+Evaluating (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1)
+Evaluating rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl
+rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl evaluated to closure [incr_all=closure [] incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list;list=1::2::3::4::[]] map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl
+Evaluating rec incr arg = arg + 1
+rec incr arg = arg + 1 evaluated to closure [incr_all=closure [] incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list;list=1::2::3::4::[]] incr arg = arg + 1
+Evaluating rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl
+rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl evaluated to closure [map=closure [incr_all=closure [] incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list;list=1::2::3::4::[]] map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl;function=closure [incr_all=closure [] incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list;list=1::2::3::4::[]] incr arg = arg + 1;incr_all=closure [] incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list;list=1::2::3::4::[]] _ list = match list with [] -> [] | hd::tl -> function hd::map function tl
+(rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) evaluated to closure [map=closure [incr_all=closure [] incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list;list=1::2::3::4::[]] map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl;function=closure [incr_all=closure [] incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list;list=1::2::3::4::[]] incr arg = arg + 1;incr_all=closure [] incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list;list=1::2::3::4::[]] _ list = match list with [] -> [] | hd::tl -> function hd::map function tl
+Evaluating list
+list evaluated to 1::2::3::4::[]
+Evaluating match list with [] -> [] | hd::tl -> function hd::map function tl
+Evaluating list
+list evaluated to 1::2::3::4::[]
+Evaluating function hd::map function tl
+Evaluating map function tl
+Evaluating map function
+Evaluating map
+map evaluated to closure [incr_all=closure [] incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list;list=1::2::3::4::[]] map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl
+Evaluating function
+function evaluated to closure [incr_all=closure [] incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list;list=1::2::3::4::[]] incr arg = arg + 1
+Evaluating rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl
+rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl evaluated to closure [map=closure [incr_all=closure [] incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list;list=1::2::3::4::[]] map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl;function=closure [incr_all=closure [] incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list;list=1::2::3::4::[]] incr arg = arg + 1;incr_all=closure [] incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list;list=1::2::3::4::[]] _ list = match list with [] -> [] | hd::tl -> function hd::map function tl
+map function evaluated to closure [map=closure [incr_all=closure [] incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list;list=1::2::3::4::[]] map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl;function=closure [incr_all=closure [] incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list;list=1::2::3::4::[]] incr arg = arg + 1;incr_all=closure [] incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list;list=1::2::3::4::[]] _ list = match list with [] -> [] | hd::tl -> function hd::map function tl
+Evaluating tl
+tl evaluated to 2::3::4::[]
+Evaluating match list with [] -> [] | hd::tl -> function hd::map function tl
+Evaluating list
+list evaluated to 2::3::4::[]
+Evaluating function hd::map function tl
+Evaluating map function tl
+Evaluating map function
+Evaluating map
+map evaluated to closure [incr_all=closure [] incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list;list=1::2::3::4::[]] map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl
+Evaluating function
+function evaluated to closure [incr_all=closure [] incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list;list=1::2::3::4::[]] incr arg = arg + 1
+Evaluating rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl
+rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl evaluated to closure [map=closure [incr_all=closure [] incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list;list=1::2::3::4::[]] map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl;function=closure [incr_all=closure [] incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list;list=1::2::3::4::[]] incr arg = arg + 1;incr_all=closure [] incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list;list=1::2::3::4::[]] _ list = match list with [] -> [] | hd::tl -> function hd::map function tl
+map function evaluated to closure [map=closure [incr_all=closure [] incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list;list=1::2::3::4::[]] map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl;function=closure [incr_all=closure [] incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list;list=1::2::3::4::[]] incr arg = arg + 1;incr_all=closure [] incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list;list=1::2::3::4::[]] _ list = match list with [] -> [] | hd::tl -> function hd::map function tl
+Evaluating tl
+tl evaluated to 3::4::[]
+Evaluating match list with [] -> [] | hd::tl -> function hd::map function tl
+Evaluating list
+list evaluated to 3::4::[]
+Evaluating function hd::map function tl
+Evaluating map function tl
+Evaluating map function
+Evaluating map
+map evaluated to closure [incr_all=closure [] incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list;list=1::2::3::4::[]] map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl
+Evaluating function
+function evaluated to closure [incr_all=closure [] incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list;list=1::2::3::4::[]] incr arg = arg + 1
+Evaluating rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl
+rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl evaluated to closure [map=closure [incr_all=closure [] incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list;list=1::2::3::4::[]] map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl;function=closure [incr_all=closure [] incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list;list=1::2::3::4::[]] incr arg = arg + 1;incr_all=closure [] incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list;list=1::2::3::4::[]] _ list = match list with [] -> [] | hd::tl -> function hd::map function tl
+map function evaluated to closure [map=closure [incr_all=closure [] incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list;list=1::2::3::4::[]] map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl;function=closure [incr_all=closure [] incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list;list=1::2::3::4::[]] incr arg = arg + 1;incr_all=closure [] incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list;list=1::2::3::4::[]] _ list = match list with [] -> [] | hd::tl -> function hd::map function tl
+Evaluating tl
+tl evaluated to 4::[]
+Evaluating match list with [] -> [] | hd::tl -> function hd::map function tl
+Evaluating list
+list evaluated to 4::[]
+Evaluating function hd::map function tl
+Evaluating map function tl
+Evaluating map function
+Evaluating map
+map evaluated to closure [incr_all=closure [] incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list;list=1::2::3::4::[]] map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl
+Evaluating function
+function evaluated to closure [incr_all=closure [] incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list;list=1::2::3::4::[]] incr arg = arg + 1
+Evaluating rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl
+rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl evaluated to closure [map=closure [incr_all=closure [] incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list;list=1::2::3::4::[]] map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl;function=closure [incr_all=closure [] incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list;list=1::2::3::4::[]] incr arg = arg + 1;incr_all=closure [] incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list;list=1::2::3::4::[]] _ list = match list with [] -> [] | hd::tl -> function hd::map function tl
+map function evaluated to closure [map=closure [incr_all=closure [] incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list;list=1::2::3::4::[]] map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl;function=closure [incr_all=closure [] incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list;list=1::2::3::4::[]] incr arg = arg + 1;incr_all=closure [] incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list;list=1::2::3::4::[]] _ list = match list with [] -> [] | hd::tl -> function hd::map function tl
+Evaluating tl
+tl evaluated to []
+Evaluating match list with [] -> [] | hd::tl -> function hd::map function tl
+Evaluating list
+list evaluated to []
+match list with [] -> [] | hd::tl -> function hd::map function tl evaluated to []
+map function tl evaluated to []
+Evaluating function hd
+Evaluating function
+function evaluated to closure [incr_all=closure [] incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list;list=1::2::3::4::[]] incr arg = arg + 1
+Evaluating hd
+hd evaluated to 4
+Evaluating arg + 1
+Evaluating arg
+arg evaluated to 4
+arg + 1 evaluated to 5
+function hd evaluated to 5
+function hd::map function tl evaluated to 5::[]
+match list with [] -> [] | hd::tl -> function hd::map function tl evaluated to 5::[]
+map function tl evaluated to 5::[]
+Evaluating function hd
+Evaluating function
+function evaluated to closure [incr_all=closure [] incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list;list=1::2::3::4::[]] incr arg = arg + 1
+Evaluating hd
+hd evaluated to 3
+Evaluating arg + 1
+Evaluating arg
+arg evaluated to 3
+arg + 1 evaluated to 4
+function hd evaluated to 4
+function hd::map function tl evaluated to 4::5::[]
+match list with [] -> [] | hd::tl -> function hd::map function tl evaluated to 4::5::[]
+map function tl evaluated to 4::5::[]
+Evaluating function hd
+Evaluating function
+function evaluated to closure [incr_all=closure [] incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list;list=1::2::3::4::[]] incr arg = arg + 1
+Evaluating hd
+hd evaluated to 2
+Evaluating arg + 1
+Evaluating arg
+arg evaluated to 2
+arg + 1 evaluated to 3
+function hd evaluated to 3
+function hd::map function tl evaluated to 3::4::5::[]
+match list with [] -> [] | hd::tl -> function hd::map function tl evaluated to 3::4::5::[]
+map function tl evaluated to 3::4::5::[]
+Evaluating function hd
+Evaluating function
+function evaluated to closure [incr_all=closure [] incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list;list=1::2::3::4::[]] incr arg = arg + 1
+Evaluating hd
+hd evaluated to 1
+Evaluating arg + 1
+Evaluating arg
+arg evaluated to 1
+arg + 1 evaluated to 2
+function hd evaluated to 2
+function hd::map function tl evaluated to 2::3::4::5::[]
+match list with [] -> [] | hd::tl -> function hd::map function tl evaluated to 2::3::4::5::[]
+(rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list evaluated to 2::3::4::5::[]
+(rec incr_all list = (rec map function = rec _ list = match list with [] -> [] | hd::tl -> function hd::map function tl) (rec incr arg = arg + 1) list) (1::(2::(3::(4::[])))) evaluated to 2::3::4::5::[]
+2::3::4::5::[]
+========

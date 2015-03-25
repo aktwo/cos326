@@ -1,0 +1,10 @@
+### Starting build.
+# Target: theory.ml.depends, tags: { extension:ml, file:theory.ml, ocaml, ocamldep, quiet }
+/usr/local/bin/ocamldep.opt -modules theory.ml > theory.ml.depends # cached
+# Target: theory.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:theory.cmo, file:theory.ml, implem, ocaml, quiet }
+/usr/local/bin/ocamlc.opt -c -o theory.cmo theory.ml # cached
+# Target: theory.d.cmo, tags: { byte, compile, debug, extension:cmo, extension:ml, file:theory.d.cmo, file:theory.ml, implem, ocaml, quiet }
+/usr/local/bin/ocamlc.opt -c -g -o theory.d.cmo theory.ml # cached
+# Target: theory.d.byte, tags: { byte, debug, dont_link_with, extension:byte, file:theory.d.byte, link, ocaml, program, quiet }
+/usr/local/bin/ocamlc.opt -g theory.d.cmo -o theory.d.byte # cached
+# Compilation successful.

@@ -1,0 +1,9 @@
+#directory "_build";;
+#load "Syntax.d.cmo";;
+#load "Printing.d.cmo";;
+#load "EvalUtil.d.cmo";;
+#load "EvalEnv.d.cmo";;
+#load "Testing.d.cmo";;
+open Syntax;;
+open EvalEnv;;
+open Testing;;

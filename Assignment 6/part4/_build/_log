@@ -1,0 +1,34 @@
+### Starting build.
+# Target: lcs.ml.depends, tags: { extension:ml, file:lcs.ml, ocaml, ocamldep, quiet }
+/usr/local/bin/ocamldep.opt -modules lcs.ml > lcs.ml.depends
+# Target: base.mli.depends, tags: { extension:mli, file:base.mli, ocaml, ocamldep, quiet }
+/usr/local/bin/ocamldep.opt -modules base.mli > base.mli.depends # cached
+# Target: base.cmi, tags: { byte, compile, extension:mli, file:base.mli, interf, ocaml, quiet }
+/usr/local/bin/ocamlc.opt -c -o base.cmi base.mli # cached
+# Target: memoizer.mli.depends, tags: { extension:mli, file:memoizer.mli, ocaml, ocamldep, quiet }
+/usr/local/bin/ocamldep.opt -modules memoizer.mli > memoizer.mli.depends # cached
+# Target: memoizer.cmi, tags: { byte, compile, extension:mli, file:memoizer.mli, interf, ocaml, quiet }
+/usr/local/bin/ocamlc.opt -c -o memoizer.cmi memoizer.mli # cached
+# Target: timing.mli.depends, tags: { extension:mli, file:timing.mli, ocaml, ocamldep, quiet }
+/usr/local/bin/ocamldep.opt -modules timing.mli > timing.mli.depends # cached
+# Target: timing.cmi, tags: { byte, compile, extension:mli, file:timing.mli, interf, ocaml, quiet }
+/usr/local/bin/ocamlc.opt -c -o timing.cmi timing.mli # cached
+# Target: lcs.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:lcs.cmo, file:lcs.ml, implem, ocaml, quiet }
+/usr/local/bin/ocamlc.opt -c -o lcs.cmo lcs.ml
+# Target: lcs.d.cmo, tags: { byte, compile, debug, extension:cmo, extension:ml, file:lcs.d.cmo, file:lcs.ml, implem, ocaml, quiet }
+/usr/local/bin/ocamlc.opt -c -g -o lcs.d.cmo lcs.ml
+# Target: base.ml.depends, tags: { extension:ml, file:base.ml, ocaml, ocamldep, quiet }
+/usr/local/bin/ocamldep.opt -modules base.ml > base.ml.depends # cached
+# Target: base.d.cmo, tags: { byte, compile, debug, extension:cmo, extension:ml, file:base.d.cmo, file:base.ml, implem, ocaml, quiet }
+/usr/local/bin/ocamlc.opt -c -g -o base.d.cmo base.ml # cached
+# Target: memoizer.ml.depends, tags: { extension:ml, file:memoizer.ml, ocaml, ocamldep, quiet }
+/usr/local/bin/ocamldep.opt -modules memoizer.ml > memoizer.ml.depends # cached
+# Target: memoizer.d.cmo, tags: { byte, compile, debug, extension:cmo, extension:ml, file:memoizer.d.cmo, file:memoizer.ml, implem, ocaml, quiet }
+/usr/local/bin/ocamlc.opt -c -g -o memoizer.d.cmo memoizer.ml # cached
+# Target: timing.ml.depends, tags: { extension:ml, file:timing.ml, ocaml, ocamldep, quiet }
+/usr/local/bin/ocamldep.opt -modules timing.ml > timing.ml.depends # cached
+# Target: timing.d.cmo, tags: { byte, compile, debug, extension:cmo, extension:ml, file:timing.d.cmo, file:timing.ml, implem, ocaml, quiet }
+/usr/local/bin/ocamlc.opt -c -g -o timing.d.cmo timing.ml # cached
+# Target: lcs.d.byte, tags: { byte, debug, dont_link_with, extension:byte, file:lcs.d.byte, link, ocaml, program, quiet }
+/usr/local/bin/ocamlc.opt unix.cma -g base.d.cmo memoizer.d.cmo timing.d.cmo lcs.d.cmo -o lcs.d.byte
+# Compilation successful.
